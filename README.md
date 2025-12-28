@@ -4,7 +4,8 @@
 
 
 <img width="3300" height="1200" alt="image" src="https://github.com/user-attachments/assets/1a18c7b5-eb84-444d-a5e3-1e4815f2ecfc" />
-```{r}
+
+```
 ggstatsplot::grouped_ggbetweenstats(
   data           = sex_data,
   x              = Subgroup,
