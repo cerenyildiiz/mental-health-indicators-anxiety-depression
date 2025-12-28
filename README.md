@@ -138,6 +138,23 @@ ggplot(age_summary, aes(x = Age, y = mean_value, fill = Indicator)) +
   )
 ```
 
+CONCLUSION: The graph compares the average prevalence rates of anxiety and depression across diﬀerent
+age groups. Generally, the highest symptom levels are observed between ages 18 and 29. This cohort exhibits
+a higher prevalence of symptoms than other age groups, and the composite index (“anxiety or depression”)
+reaches its peak within this demographic. This indicates that young adults report mental health issues more
+frequently.There is a steady decline in symptom rates as age increases. For instance, while rates remain
+elevated in the 30–39 and 40–49 age groups, they are lower than in younger adults. In the 60-and-older
+group, rates of both anxiety and depression decrease significantly, with the lowest rates seen in individuals
+aged 80 and over. Furthermore, the combined rate of “anxiety or depression” is consistently higher than
+the individual rates, suggesting that some individuals experience both symptoms simultaneously. Overall,
+the data demonstrates that mental health symptoms are particularly prevalent in younger age groups and
+diminish with age.
+
+
+
+
+
+
 
 
 <img width="2400" height="3000" alt="image" src="https://github.com/user-attachments/assets/dbf2bd1b-c3e8-4ff3-97b8-8aaafd24e549" />
@@ -190,7 +207,7 @@ ggplot(
 
 ```
 
-CONCLUSION: This ridgeline graph shows the trajectory of anxiety or current symptoms across all states
+CONCLUSION: This ridgeline plot shows the trajectory of anxiety or current symptoms across all states
 in the US. The graph represents a curve, representing the occurrence of symptoms observed in a given state
 over time. The horizontal axis shows the percentage of people reporting symptoms, and the vertical axis
 shows the states. The state names are not randomly listed, but rather are ordered according to the median
