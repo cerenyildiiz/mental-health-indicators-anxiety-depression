@@ -1,5 +1,13 @@
 # Indicators-of-Anxiety-and-Depression-Based-on-Self-Reported-Symptoms
 
+First, we need to import the data into the R environment via a CSV file.
+```{r load-data, message=FALSE}
+library(readr)
+library(dplyr)
+
+indicators <- Indicators_of_Anxiety_or_Depression_Based_on_Reported_Frequency_of_Symptoms_During_Last_7_Days 
+colSums(is.na(Indicators_of_Anxiety_or_Depression_Based_on_Reported_Frequency_of_Symptoms_During_Last_7_Days))
+```
 
 
 
