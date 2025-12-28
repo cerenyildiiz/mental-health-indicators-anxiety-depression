@@ -97,3 +97,51 @@ ggplot(age_summary, aes(x = Age, y = mean_value, fill = Indicator)) +
   )
 ```
 
+<img width="2400" height="3000" alt="image" src="https://github.com/user-attachments/assets/6ee8a434-d104-495e-a764-9fb04d894754" />
+
+
+```{r}
+library(ggplot2)
+library(ggridges)
+library(viridis)
+library(dplyr)
+library(forcats)
+library(tidyr)
+
+state_data <- indicators %>% 
+  filter(
+    Group == "By State",
+    Indicator == "Symptoms of Anxiety Disorder or Depressive Disorder"
+  ) %>% 
+  mutate(State = Subgroup) %>%
+  drop_na(Value)
+
+state_all_data <- state_data %>% 
+  mutate(State = fct_reorder(State, Value, .fun = median))
+
+ggplot(
+  state_all_data,
+  aes(
+    x    = Value,
+    y    = State,
+    fill = after_stat(x)
+  )
+) +
+  geom_density_ridges_gradient(
+    scale          = 3,
+    rel_min_height = 0.01
+  ) +
+  scale_fill_viridis(option = "C", guide = "none") +
+  labs(
+    title    = "Distribution of Anxiety/Depression Symptom Rates Across States",
+    subtitle = "All states (By State, Symptoms of Anxiety or Depressive Disorder)",
+    x        = "Percentage Reporting Symptoms (%)",
+    y        = ""  
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    panel.spacing = unit(0.15, "lines"),
+    plot.margin   = margin(10, 30, 10, 10)  
+  )
+
+```
