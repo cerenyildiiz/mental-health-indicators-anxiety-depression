@@ -190,6 +190,26 @@ ggplot(
 
 ```
 
+CONCLUSION: This ridgeline graph shows the trajectory of anxiety or current symptoms across all states
+in the US. The graph represents a curve, representing the occurrence of symptoms observed in a given state
+over time. The horizontal axis shows the percentage of people reporting symptoms, and the vertical axis
+shows the states. The state names are not randomly listed, but rather are ordered according to the median
+symptoms calculated for the state; states with lower medians appear lower on the list, and states with higher
+medians appear higher. This listing makes the comparison between states more visually understandable.The
+color scale also aids in interpreting the graph: purple tones represent lower percentages, while shades toward
+yellow and orange represent higher percentages. In some states ( Louisiana, New Mexico, and Arizona), the
+curves extend further to the right, with warmer colors (yellow and orange) covering a larger area, suggesting
+that symptom rates are both higher and more frequent in these states. Conversely, in some states, such as
+Minnesota, Wisconsin, and North Dakota, the distributions are narrower and centered around lower values,
+suggesting that symptom rates are relatively lower and more stable in these states. Overall, the graph reveals
+significant diﬀerences in both symptom levels and the breadth of the distribution across states, and that
+mental health indicators have been quite geographically heterogeneous during the pandemic.
+
+
+
+
+
+
 
 
 References:
