@@ -105,8 +105,9 @@ ggplot(age_summary, aes(x = Age, y = mean_value, fill = Indicator)) +
   )
 ```
 
-<img width="2400" height="3000" alt="image" src="https://github.com/user-attachments/assets/6ee8a434-d104-495e-a764-9fb04d894754" />
 
+
+<img width="2400" height="3000" alt="image" src="https://github.com/user-attachments/assets/dbf2bd1b-c3e8-4ff3-97b8-8aaafd24e549" />
 
 ```{r}
 library(ggplot2)
@@ -141,15 +142,17 @@ ggplot(
   ) +
   scale_fill_viridis(option = "C", guide = "none") +
   labs(
-    title    = "Distribution of Anxiety/Depression Symptom Rates Across States",
-    subtitle = "All states (By State, Symptoms of Anxiety or Depressive Disorder)",
-    x        = "Percentage Reporting Symptoms (%)",
-    y        = ""  
+    title    = "State-Level Distribution of Anxiety and Depression Symptoms in the U.S.",
+    subtitle = "Reported Symptom Prevalence Across States",
+    x        = "Percentage of Adults Reporting Symptoms (%)",
+    y        = NULL
   ) +
   theme_minimal(base_size = 11) +
   theme(
+    plot.title    = element_text(face = "bold", size = 14, hjust = 0),
+    plot.subtitle = element_text(size = 10.5, margin = margin(b = 8)),
     panel.spacing = unit(0.15, "lines"),
-    plot.margin   = margin(10, 30, 10, 10)  
+    plot.margin   = margin(10, 30, 10, 10)
   )
 
 ```
