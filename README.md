@@ -46,8 +46,31 @@ ggstatsplot::grouped_ggbetweenstats(
     )
   )
 )
-
 ```
+
+CONCLUSION: When the impact of gender on anxiety and depression symptom levels is examined, it is
+observed that females report higher symptom values than males for both disorders. In the context of anxiety,
+the median value for females is approximately 33.85, whereas for males, it stands at around 26.20. Violin plots
+indicate that the symptom distribution among female participants is both wider and extends toward higher
+values, revealing greater variance and symptom intensity in women. Mann–Whitney test results strongly
+corroborate this observation: a p-value of 1.77e-14 demonstrates that the diﬀerence is statistically highly
+significant, while a rank-biserial correlation of –0.89 indicates a very large eﬀect size. Thus, gender creates a
+distinct and robust separation in anxiety symptoms.A similar pattern is observed for depression symptoms,
+although the eﬀect size is relatively smaller. The median for females is 26.00, compared to approximately
+22.60 for males. The symptom distribution for females again spans a wider range and leans toward higher
+values. While the Mann–Whitney test p-value of 3.34e-08 confirms the statistical significance of this diﬀerence,
+the rank-biserial eﬀect of –0.64 suggests a medium-to-high level diﬀerence, albeit not as strong as in anxiety.
+In conclusion, while females report higher symptom levels in both disorders, the gender disparity is notably
+more pronounced in anxiety.
+
+
+
+
+
+
+
+
+
 <img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/a5c182b6-ed31-4f54-a3e6-a320ba83ac60" />
 
 
