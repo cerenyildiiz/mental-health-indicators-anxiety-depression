@@ -227,6 +227,7 @@ mental health indicators have been quite geographically heterogeneous during the
 
 
 
+<img width="4800" height="2400" alt="image" src="https://github.com/user-attachments/assets/833b6d7a-fe5b-42b9-84df-734ca7c5ed69" />
 
 
 
