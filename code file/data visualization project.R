@@ -183,5 +183,83 @@ ggplot(
   )
 
 
+# Fourth Graph
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+library(stringr)
+library(grid)
 
-# NOTE:As a result of the visualization, some graphs are not displayed correctly in the window. You can refer to my .rmd file to resolve this.
+
+plot_df <- indicators %>%
+  filter(
+    Group %in% c("By Education", "By Educational attainment"),   
+    Indicator %in% c("Symptoms of Anxiety Disorder",
+                     "Symptoms of Depressive Disorder"),
+    !is.na(Value),
+    !is.na(Subgroup)
+  ) %>%
+  mutate(Education = Subgroup) %>%
+  group_by(Education, Indicator) %>%
+  summarise(Value = mean(Value, na.rm = TRUE), .groups = "drop") %>%
+  mutate(
+    Education = factor(
+      Education,
+      levels = c(
+        "Less than a high school diploma",
+        "High school diploma or GED",
+        "Some college/Associate's degree",
+        "Bachelor's degree or higher"
+      )
+    )
+  )
+
+p <- ggplot(plot_df, aes(x = Education, y = Value, fill = Indicator)) +
+  geom_col(position = position_dodge(width = 0.75), width = 0.62) +
+  coord_flip(clip = "off") +
+  scale_y_continuous(
+    labels = function(x) paste0(round(x, 0), "%"),
+    expand = expansion(mult = c(0, 0.06))
+  ) +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 28)) +
+  scale_fill_manual(values = c(
+    "Symptoms of Anxiety Disorder"    = "lightblue",
+    "Symptoms of Depressive Disorder" = "grey40"
+  )) +
+  labs(
+    x = "",
+    y = "Average Percentage ",
+    fill = "",
+    title = "Anxiety and Depression Symptoms Across Education Levels",
+    subtitle = "Average Self-Reported Symptom Prevalence Over  Survey Waves"
+  ) +
+  theme_hc(base_size = 14) +
+  theme(
+   
+    axis.text.y = element_text(size = 13),
+    axis.text.x = element_text(size = 12),
+    axis.title.y = element_text(size = 13),
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 12),
+
+   
+    legend.position = "bottom",
+    legend.text = element_text(size = 13),
+    legend.key.size = unit(1.0, "lines"),
+    legend.box = "horizontal",
+    legend.spacing.x = unit(0.8, "lines"),
+
+   
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+
+   
+    plot.margin = unit(c(12, 26, 12, 12), "pt")
+  ) +
+  guides(fill = guide_legend(nrow = 1))
+
+p
+
+
+ggsave("education_anxiety_depression_poster.png", p, width = 12, height = 6, dpi = 400)
+
