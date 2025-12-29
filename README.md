@@ -318,7 +318,7 @@ ggsave("education_anxiety_depression_poster.png", p, width = 12, height = 6, dpi
 
 This graph presents the average prevalence of self-reported anxiety and depressive symptoms across different education levels. Overall, anxiety symptoms are more prevalent than depressive symptoms in all groups. A general trend suggests that symptom prevalence tends to decrease as educational attainment increases, with lower rates observed among individuals with higher levels of education. While this pattern does not indicate a definitive or causal relationship, the distribution of the data supports the view that higher educational attainment is associated with comparatively lower levels of reported mental health symptoms.
 
-Bu metin:
+
 References:
 
 https://catalog.data.gov/dataset/indicators-of-anxiety-or-depression-based-on-reported-frequency-of-symptoms-during-last-7-
