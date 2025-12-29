@@ -7,7 +7,7 @@
 **Institution: Eskisehir Technical University**
 
 
-🔴 You can see my code by reading the README.ME section on this page.
+🔴 You can see my code by reading the README.MD section on this page.
 
 Mental illnesses are significant health concerns today, affecting individuals' daily lives, social relationships, and overall quality of life in multifaceted ways.Have you ever wondered which group you belong to in terms of the mental health challenges you experience in daily life?
 
