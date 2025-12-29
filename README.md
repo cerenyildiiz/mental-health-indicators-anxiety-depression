@@ -307,6 +307,8 @@ p
 
 
 ggsave("education_anxiety_depression_poster.png", p, width = 12, height = 6, dpi = 400)
+
+
 ```
 
 
