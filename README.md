@@ -73,7 +73,7 @@ more pronounced in anxiety.
 
 
 
-<img width="3000" height="1500" alt="image" src="https://github.com/user-attachments/assets/a5c182b6-ed31-4f54-a3e6-a320ba83ac60" />
+<img width="4200" height="1950" alt="image" src="https://github.com/user-attachments/assets/10ffccd9-315a-48fa-b688-95aad4b7c928" />
 
 
 
@@ -229,7 +229,7 @@ mental health indicators have been quite geographically heterogeneous during the
 
 
 
-<img width="4800" height="2400" alt="education_anxiety_depression_poster" src="https://github.com/user-attachments/assets/5b25588a-f2bc-4e1b-bbfd-6b20512d6261" />
+
 
 
 
