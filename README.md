@@ -161,52 +161,84 @@ diminish with age.
 
 <img width="2400" height="3000" alt="image" src="https://github.com/user-attachments/assets/dbf2bd1b-c3e8-4ff3-97b8-8aaafd24e549" />
 
-```{r}
-library(ggplot2)
-library(ggridges)
-library(viridis)
+```r
 library(dplyr)
-library(forcats)
-library(tidyr)
+library(ggplot2)
+library(ggthemes)
+library(stringr)
+library(grid)
 
-state_data <- indicators %>% 
+plot_df <- indicators %>%
   filter(
-    Group == "By State",
-    Indicator == "Symptoms of Anxiety Disorder or Depressive Disorder"
-  ) %>% 
-  mutate(State = Subgroup) %>%
-  drop_na(Value)
-
-state_all_data <- state_data %>% 
-  mutate(State = fct_reorder(State, Value, .fun = median))
-
-ggplot(
-  state_all_data,
-  aes(
-    x    = Value,
-    y    = State,
-    fill = after_stat(x)
+    Group %in% c("By Education", "By Educational attainment"),
+    Indicator %in% c(
+      "Symptoms of Anxiety Disorder",
+      "Symptoms of Depressive Disorder"
+    ),
+    !is.na(Value),
+    !is.na(Subgroup)
+  ) %>%
+  mutate(Education = Subgroup) %>%
+  group_by(Education, Indicator) %>%
+  summarise(Value = mean(Value, na.rm = TRUE), .groups = "drop") %>%
+  mutate(
+    Education = factor(
+      Education,
+      levels = c(
+        "Less than a high school diploma",
+        "High school diploma or GED",
+        "Some college/Associate's degree",
+        "Bachelor's degree or higher"
+      )
+    )
   )
-) +
-  geom_density_ridges_gradient(
-    scale          = 3,
-    rel_min_height = 0.01
+
+p <- ggplot(plot_df, aes(x = Education, y = Value, fill = Indicator)) +
+  geom_col(position = position_dodge(width = 0.75), width = 0.62) +
+  coord_flip(clip = "off") +
+  scale_y_continuous(
+    labels = function(x) paste0(round(x, 0), "%"),
+    expand = expansion(mult = c(0, 0.06))
   ) +
-  scale_fill_viridis(option = "C", guide = "none") +
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 28)) +
+  scale_fill_manual(values = c(
+    "Symptoms of Anxiety Disorder"    = "lightblue",
+    "Symptoms of Depressive Disorder" = "grey40"
+  )) +
   labs(
-    title    = "State-Level Distribution of Anxiety and Depression Symptoms in the U.S.",
-    subtitle = "Reported Symptom Prevalence Across States",
-    x        = "Percentage of Adults Reporting Symptoms (%)",
-    y        = NULL
+    x = "",
+    y = "Average Percentage",
+    fill = "",
+    title = "Anxiety and Depression Symptoms Across Education Levels",
+    subtitle = "Average Self-Reported Symptom Prevalence Over Survey Waves"
   ) +
-  theme_minimal(base_size = 11) +
+  theme_hc(base_size = 14) +
   theme(
-    plot.title    = element_text(face = "bold", size = 14, hjust = 0),
-    plot.subtitle = element_text(size = 10.5, margin = margin(b = 8)),
-    panel.spacing = unit(0.15, "lines"),
-    plot.margin   = margin(10, 30, 10, 10)
-  )
+    axis.text.y = element_text(size = 13),
+    axis.text.x = element_text(size = 12),
+    axis.title.y = element_text(size = 13),
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 12),
+    legend.position = "bottom",
+    legend.text = element_text(size = 13),
+    legend.key.size = unit(1.0, "lines"),
+    legend.box = "horizontal",
+    legend.spacing.x = unit(0.8, "lines"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    plot.margin = unit(c(12, 26, 12, 12), "pt")
+  ) +
+  guides(fill = guide_legend(nrow = 1))
 
+p
+
+ggsave(
+  "education_anxiety_depression_poster.png",
+  p,
+  width = 12,
+  height = 6,
+  dpi = 400
+)
 ```
 
 CONCLUSION: This ridgeline plot shows the trajectory of anxiety or current symptoms across all states
@@ -228,6 +260,8 @@ mental health indicators have been quite geographically heterogeneous during the
 
 
 <img width="4800" height="2400" alt="image" src="https://github.com/user-attachments/assets/833b6d7a-fe5b-42b9-84df-734ca7c5ed69" />
+
+
 ```{r}
 library(dplyr)
 library(ggplot2)
