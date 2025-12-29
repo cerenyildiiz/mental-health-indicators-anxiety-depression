@@ -229,6 +229,9 @@ mental health indicators have been quite geographically heterogeneous during the
 
 
 
+<img width="4800" height="2400" alt="education_anxiety_depression_poster" src="https://github.com/user-attachments/assets/5b25588a-f2bc-4e1b-bbfd-6b20512d6261" />
+
+
 
 
 References:
