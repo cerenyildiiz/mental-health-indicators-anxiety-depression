@@ -2,7 +2,7 @@
 
 
 
-# Mental Health Indicators: Anxiety and Depression
+
 
 This repository contains the code, dataset, graphs, and poster materials developed for a data visualization project on anxiety and depression indicators.
 
