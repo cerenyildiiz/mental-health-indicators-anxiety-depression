@@ -2,20 +2,38 @@
 
 
 
-**Author:Ceren Yıldız**
+# Mental Health Indicators: Anxiety and Depression
 
-**Institution: Eskisehir Technical University**
+This repository contains the code, dataset, graphs, and poster materials developed for a data visualization project on anxiety and depression indicators.
 
+The project focuses on exploring patterns in anxiety and depression symptoms using reported mental health indicator data. The analysis aims to present these patterns through clear visualizations and interpretable summaries.
 
-🔴 You can see my code by reading the README.MD section on this page.
+## Repository Structure
 
-Mental illnesses are significant health concerns today, affecting individuals' daily lives, social relationships, and overall quality of life in multifaceted ways.Have you ever wondered which group you belong to in terms of the mental health challenges you experience in daily life?
+The repository is organized as follows:
 
-
-
-
-
-First, we need to import the data into the R environment via a CSV file.
+```text
+├── code file/                  # R scripts and project code
+│   ├── data visualization project.R
+│   └── Readme.me
+│
+├── data/                       # Dataset used in the analysis
+│   ├── Indicators_of_Anxiety_or_Depression_...
+│   └── Readme.me
+│
+├── graphs/                     # Generated visualizations
+│   ├── Anxiety and Depression Symptoms Across Education Levels.png
+│   ├── Gender Differences in Anxiety and Depression Symptoms.png
+│   ├── Prevalence of Anxiety and Depression Symptoms by Age Group.png
+│   ├── State-Level Distribution of Anxiety and Depression Symptoms in the United States.png
+│   └── Readme.me
+│
+├── poster/                     # Poster files prepared for project presentation
+│   ├── CerenYildiz.pdf
+│   ├── CerenYildiz.png
+│   └── Readme.me
+│
+└── README.md                   # Main project documentation
 ```{r load-data, message=FALSE}
 library(readr)
 library(dplyr)
