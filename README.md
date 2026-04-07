@@ -15,23 +15,23 @@ The repository is organized as follows:
 ```text
 ├── code file/                  # R scripts and project code
 │   ├── data visualization project.R
-│   └── Readme.me
+│   └── Readme.md
 │
 ├── data/                       # Dataset used in the analysis
 │   ├── Indicators_of_Anxiety_or_Depression_...
-│   └── Readme.me
+│   └── Readme.md
 │
 ├── graphs/                     # Generated visualizations
 │   ├── Anxiety and Depression Symptoms Across Education Levels.png
 │   ├── Gender Differences in Anxiety and Depression Symptoms.png
 │   ├── Prevalence of Anxiety and Depression Symptoms by Age Group.png
 │   ├── State-Level Distribution of Anxiety and Depression Symptoms in the United States.png
-│   └── Readme.me
+│   └── Readme.md
 │
 ├── poster/                     # Poster files prepared for project presentation
 │   ├── CerenYildiz.pdf
 │   ├── CerenYildiz.png
-│   └── Readme.me
+│   └── Readme.md
 │
 └── README.md                   # Main project documentation
 
