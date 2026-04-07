@@ -34,6 +34,11 @@ The repository is organized as follows:
 │   └── Readme.me
 │
 └── README.md                   # Main project documentation
+
+
+
+
+
 ```{r load-data, message=FALSE}
 library(readr)
 library(dplyr)
@@ -54,6 +59,7 @@ colSums(is.na(Indicators_of_Anxiety_or_Depression_Based_on_Reported_Frequency_of
 
 
 ```
+
 ggstatsplot::grouped_ggbetweenstats(
   data           = sex_data,
   x              = Subgroup,
